@@ -50,6 +50,8 @@ public class TicketsJob {
 						ticket.setOwner(randomUser);
 						ticket.setTicketStatus(TicketStatus.IN_PROGRESS);
 						supportTicketService.save(ticket);
+					} else {
+						log.info("User don't have bandwitdh! On next run it will try to assign the ticket to another user.");
 					}
 				}
 			});
